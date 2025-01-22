@@ -1,13 +1,8 @@
 import './App.css'
 import axios from "axios";
+import Movies from "./Components/Movies.jsx";
 
 
-// console.log(import.meta.env.VITE_OMDBAPI_KEY)
-// console.log(import.meta.env.VITE_APP_OMDBAPI_URL)
-
-// fetch("")
-//     .then(response => response.json()) // pretvarame go odgovorot u JSON format
-//     .then(jsonResponse => console.log(jsonResponse));
 
 axios.get(import.meta.env.VITE_APP_OMDBAPI_URL+"?t=Terminator&apikey="+import.meta.env.VITE_OMDBAPI_KEY)
     .then(response => console.log(response.data))
@@ -19,6 +14,7 @@ function App() {
   return (
     <>
       <p>Zdravo</p>
+        <Movies />
     </>
   )
 }
