@@ -1,6 +1,7 @@
-import { useState } from 'react'
 import './App.css'
-import AllVideos from "./Components/AllVideos.jsx";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import Home from "./pages/Home.jsx";
+import Videos from "./Components/Videos.jsx";
 
 
 
@@ -8,7 +9,15 @@ import AllVideos from "./Components/AllVideos.jsx";
 const App = () => {
     return (
         <>
-        <AllVideos />
+
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={ <Home /> }/>
+                <Route path="/video/:id" element={ <Videos /> }/>
+            </Routes>
+        </BrowserRouter>
+
+
         </>
     )
 }
