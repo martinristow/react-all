@@ -18,7 +18,7 @@ function MoviesExample() {
       <>
       <p>Rabote</p>
 
-          <form>
+          <form onSubmit={ e => e.preventDefault() }>
               <input onInput={ (e) => setSearchMovie(e.target.value)} type="text" placeholder="Vnesi nekoj film"/>
               <button onClick={searchMovieByTitle} type="button">Prebaruvaj film</button>
 

@@ -1,10 +1,12 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import axios from "axios";
+import MovieCard from "../Templates/Snippets/MovieCard.jsx";
 
 
 function Movies() {
 
     const [movieName, setMovieName] = useState();
+    const [movieData, setMovieData] = useState({});
 
     const searchMovieByTitle = () => {
 
@@ -12,16 +14,22 @@ function Movies() {
         const OMDBAPI_KEY = import.meta.env.VITE_OMDBAPI_KEY
 
         axios.get(`${OMDBAPI_URL}?t=${movieName}&apikey=${OMDBAPI_KEY}`)
-            .then(response => console.log(response.data))
+            .then(response => setMovieData(response.data))
             .catch(error => console.log(error))
     }
 
+    useEffect(() => {
+        searchMovieByTitle();
+    }, []);
+
     return (
         <>
-            <form action="">
-                <input onInput={e => setMovieName(e.target.value)} type="text" placeholder="Vnesi nekoj film"/>
+            <form onSubmit={ e => e.preventDefault() }>
+                <input onInput={e => setMovieName(e.currentTarget.value)} type="text" placeholder="Vnesi nekoj film"/>
                 <button  onClick={searchMovieByTitle} type="button">Search Movie</button>
             </form>
+
+        <MovieCard movie={movieData} />
         </>
     );
 }
