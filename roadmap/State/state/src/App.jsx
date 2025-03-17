@@ -14,7 +14,6 @@ function App() {
     let [name, setName] = useState("Hello World"); // "use" -> Hook
     let [tax, setTax] = useState(0);
 
-
     return (
         <>
             <Product tax={tax}/>
