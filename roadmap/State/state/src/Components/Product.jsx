@@ -19,12 +19,33 @@ const Product = (props) => {
     */
     let [newProductName, setNewProductName] = useState("");
     let [newProductPrice, setNewProductPrice] = useState("");
+    let [infoMessage, setInfoMessage] = useState();
+
+    function searchP(e) {
+        const searchTerm = e.currentTarget.value.toLowerCase();
+        // if(products.hasOwnProperty(searchTerm)){ // search = "Iphone 15 Pro" -> hasOwnProperty -> "products" -> key "Iphone 15 Pro"
+        //     console.log("true")
+        // } else{
+        //     console.log("false");
+        // }
+        let productNames = Object.keys(products);
+        for (let product of productNames) {
+            if (searchTerm === product.toLowerCase()) {
+                setInfoMessage("Successfully found the product")
+                break;
+            } else{
+                setInfoMessage("We didn't find the product.");
+            }
+        }
+
+    }
 
     function addProduct() {
         if (newProductPrice === "" || newProductName === "") {
             console.log("Enter a product name or product price!")
             return;
         }
+
 
         let newProduct = {[newProductName]: parseInt(newProductPrice)};
 
@@ -44,13 +65,18 @@ const Product = (props) => {
     return (
         <div>
 
-            {
-                Object.entries(products).map(([phone, price]) => (
-                    <p>{phone}, price: {price} MKD, with tax: {calculateTax(price, props.tax)}
-                        <button onClick={() => setProducts({})}>Delete</button>
-                    </p>
-                ))
-            }
+            <div>
+                {
+                    Object.entries(products).map(([phone, price]) => (
+
+                        <div>
+                            <h3>{phone}</h3>
+                            <p>{calculateTax(price, props.tax)}</p>
+                        </div>
+
+                    ))
+                }
+            </div>
 
             <div>
                 <input onInput={(e) => setNewProductName(e.target.value)} type="text"
@@ -60,6 +86,11 @@ const Product = (props) => {
                 <button onClick={addProduct}>Add new Product</button>
             </div>
 
+
+            <div>
+                <h1>{infoMessage}</h1>
+                <input type="text" placeholder="Enter a product name for searching" onInput={searchP}/>
+            </div>
         </div>
     )
 }
@@ -68,5 +99,6 @@ const Product = (props) => {
 function calculateTax(price, tax) {
     return ((price * tax) / 100) + price
 }
+
 
 export default Product
