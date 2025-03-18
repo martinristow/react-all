@@ -1,11 +1,11 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import Weather from "./Components/Weather.jsx";
 
 const App = () => {
     return (
         <>
-        <p className="m-2">Hello World</p>
-
+            <Weather/>
         </>
     )
 }
