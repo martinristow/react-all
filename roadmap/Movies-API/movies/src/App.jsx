@@ -1,5 +1,7 @@
-import './App.css'
 import SearchMovie from "./Components/SearchMovie.jsx";
+import Navigation from "./Templates/Snippets/Navigation.jsx";
+import 'bootstrap/dist/css/bootstrap.min.css'
+import Footer from "./Templates/Snippets/Footer.jsx";
 
 
 function App() {
@@ -7,7 +9,9 @@ function App() {
 
     return (
         <>
+            <Navigation/>
             <SearchMovie/>
+            <Footer/>
         </>
     )
 }
