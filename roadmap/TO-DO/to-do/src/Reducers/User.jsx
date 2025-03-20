@@ -4,6 +4,18 @@ export const initialUserData = {
 }
 
 
+export const getUsersInitialData = () => {
+    const userData = localStorage.getItem("userData");
+
+
+    if (userData) {
+        return JSON.parse(userData);
+    }
+
+    return initialUserData;
+}
+
+
 export const userReducer = (state, action) => {
 
     switch (action.type) {
