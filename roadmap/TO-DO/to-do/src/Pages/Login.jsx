@@ -10,8 +10,7 @@ const Login = () => {
     const [loginError, setLoginError] = useState("");
     const [userState, userDispatch] = useReducer(userReducer, getUsersInitialData());
 
-    console.log(userState)
-
+    console.log(userState);
     const checkCredentials = () => {
         if (username == null || password == null || username.trim() === "" || password.trim() === "") {
             setLoginError("You have not entered a username or password!")
@@ -25,6 +24,7 @@ const Login = () => {
                 setLoginError(null);
                 userDispatch({type: "SET_USERNAME", payload: username});
                 userDispatch({type: "SET_IS_LOGGED_IN", payload: true});
+                userDispatch({type: "SET_LOGIN_TIME", payload: new Date().getTime()});
             }
         })
 
@@ -41,13 +41,16 @@ const Login = () => {
 
     return (
         <>
-            <form>
-                <input onInput={e => setUsername(e.currentTarget.value)} type="text" placeholder="Enter your username"/>
-                <input onInput={e => setPassword(e.currentTarget.value)} type="password"
-                       placeholder="Enter your password"/>
-                <button onClick={checkCredentials} type="button">Login</button>
-                <p>{loginError}</p>
-            </form>
+            {
+                !userState.isLoggedIn &&
+                <form>
+                    <input onInput={e => setUsername(e.currentTarget.value)} type="text" placeholder="Enter your username"/>
+                    <input onInput={e => setPassword(e.currentTarget.value)} type="password"
+                           placeholder="Enter your password"/>
+                    <button onClick={checkCredentials} type="button">Login</button>
+                    <p>{loginError}</p>
+                </form>
+            }
 
         </>
     )
