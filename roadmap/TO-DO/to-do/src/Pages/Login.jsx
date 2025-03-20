@@ -1,6 +1,6 @@
-import React, {useReducer, useState} from 'react'
+import React, {useEffect, useReducer, useState} from 'react'
 import USERS from '../data/users.json'
-import {initialUserData, userReducer} from "../Reducers/User.jsx";
+import {getUsersInitialData, initialUserData, userReducer} from "../Reducers/User.jsx";
 
 const Login = () => {
 
@@ -8,7 +8,9 @@ const Login = () => {
     const [username, setUsername] = useState(null);
     const [password, setPassword] = useState(null);
     const [loginError, setLoginError] = useState("");
-    const [userState, userDispatch] = useReducer(userReducer, initialUserData);
+    const [userState, userDispatch] = useReducer(userReducer, getUsersInitialData());
+
+    console.log(userState)
 
     const checkCredentials = () => {
         if (username == null || password == null || username.trim() === "" || password.trim() === "") {
@@ -20,12 +22,10 @@ const Login = () => {
         USERS.forEach((user, index) => {
             if (user.username === username && user.password === password) {
                 foundUser = true;
-                localStorage.setItem("username", user.username);
-                userDispatch({type:"SET_USERNAME", payload: username})
-                userDispatch({type:"SET_IS_LOGGED_IN", payload: true})
+                setLoginError(null);
+                userDispatch({type: "SET_USERNAME", payload: username});
+                userDispatch({type: "SET_IS_LOGGED_IN", payload: true});
             }
-
-
         })
 
         if (!foundUser) {
@@ -33,6 +33,11 @@ const Login = () => {
         }
 
     }
+    useEffect(() => {
+        if (userState.isLoggedIn) {
+            localStorage.setItem("userData", JSON.stringify(userState));
+        }
+    }, [userState]);
 
     return (
         <>
