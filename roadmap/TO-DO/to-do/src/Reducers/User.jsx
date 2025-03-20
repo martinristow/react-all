@@ -1,10 +1,10 @@
-const initialUserData = {
+export const initialUserData = {
     username: null,
     isLoggedIn: false,
 }
 
 
-const userReducer = (state, action) => {
+export const userReducer = (state, action) => {
 
     switch (action.type) {
         case "SET_USERNAME":
