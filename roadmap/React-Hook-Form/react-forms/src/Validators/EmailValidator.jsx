@@ -1,3 +1,5 @@
+const invalidEmails = ["admin@gmail.com", "test@gmail.com"];
+
 export const EmailValidator = ({
         required: {
             value: true,
@@ -8,13 +10,8 @@ export const EmailValidator = ({
             message: "Email address must be at least 15 characters long"
         },
 
-        validateEmail: value => {
-            const invalidEmails = ["admin@gmail.com", "test@gmail.com"];
-            if (invalidEmails.includes(value)) {
-                return "Email address is invalid";
-            }
-
-            return true;
+        validate: {
+            invalidEmailCheck: value => !invalidEmails.includes(value) || "Email address is invalid"
         },
 
         pattern: {
