@@ -1,6 +1,7 @@
-import React, {useEffect, useReducer, useState} from 'react'
+import React, {useContext, useEffect, useReducer, useState} from 'react'
 import USERS from '../data/users.json'
 import {getUsersInitialData, initialUserData, userReducer} from "../Reducers/User.jsx";
+import {UserContext} from "../App.jsx";
 
 const Login = () => {
 
@@ -8,9 +9,10 @@ const Login = () => {
     const [username, setUsername] = useState(null);
     const [password, setPassword] = useState(null);
     const [loginError, setLoginError] = useState("");
-    const [userState, userDispatch] = useReducer(userReducer, getUsersInitialData());
 
-    console.log(userState);
+    const {userState, userDispatch} = useContext(UserContext);
+
+
     const checkCredentials = () => {
         if (username == null || password == null || username.trim() === "" || password.trim() === "") {
             setLoginError("You have not entered a username or password!")
