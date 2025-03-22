@@ -1,9 +1,20 @@
-import {get, useForm} from "react-hook-form"
+import {useForm} from "react-hook-form"
 import {JSX} from "react";
-// import React from 'react'
+import axios from "axios";
+
+
+const URL = "https://nominatim.openstreetmap.org/reverse?"
 
 const Home = (): JSX.Element => {
-    const getAddress = (location: GeolocationPosition) => console.log(location.coords.latitude, location.coords.longitude)
+    const getAddress = (location: GeolocationPosition) => {
+        const lat: number = location.coords.latitude;
+        const long: number = location.coords.longitude;
+        const fullUrl: string = URL + `&lat=${lat}&lon=${long}&format=json`;
+        axios.get(fullUrl).then(response => {
+            console.log(response.data.display_name);
+        })
+
+    };
     const addressForbidden = () => console.log("We got reject")
 
 
