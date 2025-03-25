@@ -16,14 +16,14 @@ const Login = () => {
     const handleLogin = () => {
 
         if (email !== "admin@admin.com" || password !== "123456") {
-            console.log("Nope")
+            // console.log("Nope")
             return;
         }
         setUserState({
             "loggedIn": true,
             "email": email,
         });
-        console.log(setUserState)
+        // console.log(setUserState)
     }
 
     const handleLogout = () => {

@@ -3,7 +3,7 @@ import {userState} from "../States/userState.js";
 
 const UserData = () => {
     const userData = useRecoilValue(userState);
-    console.log(userData)
+    // console.log(userData)
 
     return (
         <p>{userData.email}</p>
