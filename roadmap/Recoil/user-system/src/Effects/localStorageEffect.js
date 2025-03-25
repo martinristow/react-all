@@ -1,16 +1,15 @@
 import {useRecoilValue} from "recoil";
 
-const localStorageEffect = () => ({setSelf, onSet}) => {
-    const savedValues = localStorage.getItem("userData");
+export const localStorageEffect = (localStorageKey) => ({setSelf, onSet}) => {
+    const savedValues = localStorage.getItem(localStorageKey);
 
     if (savedValues !== null) {
         setSelf(JSON.parse(savedValues));
     }
 
     onSet(newValue => {
-        localStorage.setItem("userData", JSON.stringify(newValue));
+        localStorage.setItem(localStorageKey, JSON.stringify(newValue));
     })
 
 }
 
-export default localStorageEffect()
