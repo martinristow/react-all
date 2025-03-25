@@ -1,27 +1,39 @@
-import React, {useState} from 'react'
+import React from 'react'
 import {useSetRecoilState} from "recoil";
 import {tasksState} from "../States/tasksState.js";
+import {useForm} from "react-hook-form";
 
 const CreateTasks = () => {
 
-    const [taskName, setTaskName] = useState("")
-
     const setTasks = useSetRecoilState(tasksState)
 
-    const createTask = () => {
-        if (taskName.trim() === "") {
+    const {
+        register,
+        handleSubmit,
+        setError,
+        formState: {errors},
+    } = useForm()
+
+
+    const createTask = (task) => {
+        if (task.taskName.trim() === "") {
+            setError("error", {
+                type: "manuel",
+                message: "Task name is required",
+            })
             return;
         }
 
-        setTasks(oldTasks => [...oldTasks, taskName]);
-        setTaskName("");
+        setTasks(oldTasks => [...oldTasks, task.taskName]);
+
     };
 
     return (
-        <form>
-            <input value={taskName} onInput={e => setTaskName(e.currentTarget.value)} type='text'
+        <form onSubmit={handleSubmit(createTask)}>
+            {errors.error && <p>{errors.error.message}</p>}
+            <input {...register("taskName")} type='text'
                    placeholder='Enter title of tasks'/>
-            <button type="button" onClick={createTask}>Create task</button>
+            <button>Create task</button>
         </form>
     )
 }
