@@ -17,8 +17,10 @@ const Login = () => {
             return;
         }
         setUserState({
-            "loggedIn": true
+            "loggedIn": true,
+            "email": email,
         });
+        console.log(setUserState)
     }
 
     return (
