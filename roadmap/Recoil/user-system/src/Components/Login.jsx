@@ -1,29 +1,36 @@
 import React, {useState} from 'react'
 import {useRecoilValue, useSetRecoilState} from "recoil";
 import {userState} from "../States/userState.js";
-import userData from "./userData.jsx";
+import {useForm} from "react-hook-form";
 
 const Login = () => {
-
-    const [email, setEmail] = useState()
-    const [password, setPassword] = useState()
 
     const setUserState = useSetRecoilState(userState)
 
     const userData = useRecoilValue(userState)
 
+    const {
+        register,
+        handleSubmit,
+        setError,
+        formState: {errors},
+    } = useForm()
 
-    const handleLogin = () => {
 
-        if (email !== "admin@admin.com" || password !== "123456") {
-            // console.log("Nope")
+    const handleLogin = (data) => {
+
+        if (data.email !== "admin@admin.com" || data.password !== "123456") {
+            setError("errorData", {
+                type: "manuel",
+                message: "Wrong credentials",
+            })
             return;
         }
         setUserState({
             "loggedIn": true,
-            "email": email,
+            "email": data.email,
         });
-        // console.log(setUserState)
+
     }
 
     const handleLogout = () => {
@@ -34,19 +41,17 @@ const Login = () => {
         <>
             {
                 !userData.loggedIn ? (
-                        <form>
-                            <input type="text" placeholder="Enter your email"
-                                   onInput={e => setEmail(e.currentTarget.value)}/>
-                            <input type="password" placeholder="Enter your password"
-                                   onInput={e => setPassword(e.currentTarget.value)}/>
-                            <button type="button" onClick={handleLogin}>Login</button>
+                        <form onSubmit={handleSubmit(handleLogin)}>
+                            {errors.errorData && <p>{errors.errorData.message}</p>}
+                            <input {...register("email")} type="text" placeholder="Enter your email"/>
+                            <input {...register("password")} type="password" placeholder="Enter your password"/>
+                            <button>Login</button>
                         </form>)
                     :
                     (<button type="button" onClick={handleLogout}>Logout</button>)
 
             }
-
-
+            
         </>
     )
 }
