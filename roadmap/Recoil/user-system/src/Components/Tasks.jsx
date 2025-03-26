@@ -13,17 +13,19 @@ const Tasks = () => {
     const deleteTask = (taskIndex) => {
         const filteredTasks = taskData.filter((_, index) => index !== taskIndex);
         setTaskData(filteredTasks);
-
     }
+
     return (
 
         <>
             {
-                taskData.map((taskName, index) => {
+                taskData.map((task, index) => {
                     return (
-                        <div key={index}>
-                            <p>{taskName}</p>
+                        <div key={task.id}>
+                            <p>{task.name}</p>
+                            <p>{task.category}</p>
                             <button onClick={() => deleteTask(index)} key={index}>Delete task</button>
+
                         </div>
                     )
                 })
