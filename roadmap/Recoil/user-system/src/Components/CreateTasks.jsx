@@ -1,11 +1,13 @@
 import React from 'react'
-import {useSetRecoilState} from "recoil";
+import {useRecoilValue, useSetRecoilState} from "recoil";
 import {tasksState} from "../States/tasksState.js";
 import {useForm} from "react-hook-form";
 
 const CreateTasks = () => {
 
-    const setTasks = useSetRecoilState(tasksState)
+    const setTasks = useSetRecoilState(tasksState);
+
+    const tasks = useRecoilValue(tasksState);
 
     const {
         register,
@@ -15,16 +17,26 @@ const CreateTasks = () => {
     } = useForm()
 
 
-    const createTask = (task) => {
-        if (task.taskName.trim() === "") {
+    const createTask = (data) => {
+        if (data.taskName.trim() === "") {
             setError("error", {
                 type: "manuel",
                 message: "Task name is required",
-            })
+            });
             return;
         }
 
-        setTasks(oldTasks => [...oldTasks, task.taskName]);
+        tasks.forEach(oneTask => {
+            if(oneTask === data.taskName){
+                setError("error", {
+                    type: "manuel",
+                    message: "This task name is occupied!",
+                });
+                return;
+            }
+        })
+
+        setTasks(oldTasks => [...oldTasks, data.taskName]);
 
     };
 
