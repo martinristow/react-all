@@ -8,7 +8,7 @@ const CreateTasks = () => {
     const setTasks = useSetRecoilState(tasksState);
 
     const tasks = useRecoilValue(tasksState);
-
+    // console.log(tasks);
     const {
         register,
         handleSubmit,
@@ -18,25 +18,29 @@ const CreateTasks = () => {
 
 
     const createTask = (data) => {
-        if (data.taskName.trim() === "") {
-            setError("error", {
-                type: "manuel",
-                message: "Task name is required",
-            });
-            return;
-        }
 
-        tasks.forEach(oneTask => {
-            if(oneTask === data.taskName){
+        let taskFound = false;
+
+        tasks.forEach(task => {
+            if (task.name === data.taskName) {
+                taskFound = true;
                 setError("error", {
                     type: "manuel",
-                    message: "This task name is occupied!",
+                    message: "This task name is occupied"
                 });
                 return;
             }
+
         })
 
-        setTasks(oldTasks => [...oldTasks, data.taskName]);
+        const newTask = {
+            id: 1,
+            name: data.taskName,
+        };
+
+        if (!taskFound) {
+            setTasks(oldTasks => [...oldTasks, newTask]);
+        }
 
     };
 
