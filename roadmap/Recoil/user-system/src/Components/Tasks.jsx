@@ -58,23 +58,23 @@ const Tasks = () => {
         setTaskData(updateTasks);
     }
 
-    const newCommentPosted = (data) =>{
+    const newCommentPosted = (data) => {
         // console.log(data)
 
         const tasksWithComments = taskData.map(task => {
-            if(task.id === parseInt(data.taskId)) {
+            if (task.id === parseInt(data.taskId)) {
 
                 let existingComments = [];
-                if(Array.isArray(task.comments)) {
+                if (Array.isArray(task.comments)) {
                     existingComments = task.comments;
                 }
                 return {
-                  ...task,
-                  comments: [...existingComments, data.comments],
+                    ...task,
+                    comments: [...existingComments, data.comments],
                 };
             }
             return task;
-        })
+        });
         setTaskData(tasksWithComments);
     }
 
@@ -112,11 +112,10 @@ const Tasks = () => {
                                     <CommentForm task={task} callbackPostComment={newCommentPosted}/>
 
                                     <button onClick={() => deleteTask(index)} key={index}>Delete task</button>
-
                                 </div>
                             )}
 
-                            <GetAllCommentsForPost comments={task.comments}/>
+                            <GetAllCommentsForPost comments={task.comments} taskId={task.id}/>
 
                         </div>
                     )
