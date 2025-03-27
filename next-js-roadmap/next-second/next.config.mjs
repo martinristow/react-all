@@ -2,6 +2,9 @@
 const nextConfig = {
     experimental: {
         turbo: true
+    },
+    images: {
+        domains: ["cdn.dummyjson.com"]
     }
 };
 
