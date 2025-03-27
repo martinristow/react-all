@@ -1,32 +1,22 @@
-export default function BlogSlug({params}) {
+export default async function BlogSlug({params}) {
 
-    const blogPosts = [
-        {
-            name: "First blog",
-            description: "Lorem ipsum...",
-            slug: "first-blog",
-        },
-        {
-            name: "Second blog",
-            description: "Lorem ipsum...",
-            slug: "second-blog",
-        }
-    ];
-
-    const blog = blogPosts.find(post => params.slug === post.slug);
-
-    if (typeof blog === "undefined") {
-        return (
-            <>
-                <h1>404 THIS ARTICLE IS NOT FOUND</h1>
-            </>
-        )
+    const number = parseInt(params.slug);
+    if (Number.isNaN(number)) {
+        return <>
+        <h1>BAD VALUE! Please enter a number...</h1>
+        </>
     }
+    const apiURL = 'https://dummyjson.com/products/' + number;
+
+    const response = await fetch(apiURL);
+    const data = await response.json();
 
     return (
         <>
-            <h1>{blog.name}</h1>
-            <p>{blog.description}</p>
+            <h1>{data.title}</h1>
+            <p>{data.description}</p>
+            <p>{data.category}</p>
+            <p>{data.price}</p>
         </>
     )
 }
