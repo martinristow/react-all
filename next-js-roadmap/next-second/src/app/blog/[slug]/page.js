@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default async function BlogSlug({params}) {
 
     const number = parseInt(params.slug);
@@ -17,6 +19,12 @@ export default async function BlogSlug({params}) {
             <p>{data.description}</p>
             <p>{data.category}</p>
             <p>{data.price}</p>
+            {
+                data.images.map((image, index) => (
+                    <Image key={index} src={image} alt="asd" width="400" height="400" />
+                ))
+            }
+
         </>
     )
 }
