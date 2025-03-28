@@ -13,15 +13,17 @@ export default async function ProductsSlug({params}) {
     }
 
     const response = await fetch('https://dummyjson.com/products/' + urlID);
-    const data = await response.json();
 
-    if (data.message) {
+    if (response.status === 404) {
         return (
             <>
-                <h1>{data.message}!</h1>
+                <h1>The product is not found!</h1>
             </>
         )
     }
+
+    const data = await response.json();
+
 
     return (
 
