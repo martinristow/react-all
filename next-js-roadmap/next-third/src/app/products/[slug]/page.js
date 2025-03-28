@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default async function ProductsSlug({params}) {
 
@@ -23,11 +24,17 @@ export default async function ProductsSlug({params}) {
     }
 
     return (
-        <div className="products">
-            <h1 className="product-title">{data.title}</h1>
-            <Image src={data.thumbnail} alt={data.title} width={300} height={300}/>
-            <p className="product-description">{data.description}</p>
-            <p className="product-price">{data.price}</p>
+
+        <div>
+            <Link href="/">
+                <button className="button-back">Back</button>
+            </Link>
+            <div className="products">
+                <h1 className="product-title">{data.title}</h1>
+                <Image src={data.thumbnail} alt={data.title} width={300} height={300}/>
+                <p className="product-description">{data.description}</p>
+                <p className="product-price">{data.price}</p>
+            </div>
         </div>
     )
 }
