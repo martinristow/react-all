@@ -1,15 +1,16 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import Link from "next/link";
+import process from "next/dist/build/webpack/loaders/resolve-url-loader/lib/postcss";
+import getAllProducts from "@/services/productService";
 
 export default async function Home() {
 
-    const response = await fetch('https://dummyjson.com/products?limit=9');
-    const data = await response.json();
+    const data = await getAllProducts(9);
 
     return (
         <div>
-            <h1 style={{ textAlign: "center", margin: "20px 0", color: "#333" }}>Our Products</h1>
+            <h1 style={{textAlign: "center", margin: "20px 0", color: "#333"}}>Our Products</h1>
 
             <div className="products-container">
                 {data.products.map(product => (

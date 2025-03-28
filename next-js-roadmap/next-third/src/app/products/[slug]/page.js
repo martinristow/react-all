@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import {getOneProductById} from "@/services/productService";
 
 export default async function ProductsSlug({params}) {
 
@@ -12,18 +13,7 @@ export default async function ProductsSlug({params}) {
         )
     }
 
-    const response = await fetch('https://dummyjson.com/products/' + urlID);
-
-    if (response.status === 404) {
-        return (
-            <>
-                <h1>The product is not found!</h1>
-            </>
-        )
-    }
-
-    const data = await response.json();
-
+    const data = await getOneProductById(urlID);
 
     return (
 
