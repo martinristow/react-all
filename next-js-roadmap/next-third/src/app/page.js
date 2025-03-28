@@ -3,6 +3,7 @@ import styles from "./page.module.css";
 import Link from "next/link";
 import process from "next/dist/build/webpack/loaders/resolve-url-loader/lib/postcss";
 import getAllProducts from "@/services/productService";
+import SearchBar from "@/components/searchBar";
 
 export default async function Home() {
 
@@ -10,8 +11,9 @@ export default async function Home() {
 
     return (
         <div>
-            <h1 style={{textAlign: "center", margin: "20px 0", color: "#333"}}>Our Products</h1>
 
+            <h1 style={{textAlign: "center", margin: "20px 0", color: "#333"}}>Our Products</h1>
+            {<SearchBar/>}
             <div className="products-container">
                 {data.products.map(product => (
                     <div key={product.id} className="product-card">
