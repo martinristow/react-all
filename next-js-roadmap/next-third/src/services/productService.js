@@ -26,3 +26,8 @@ export async function getOneProductById(urlID) {
 }
 
 
+export async function searchProductByQuery(query) {
+    const response = await fetch('https://dummyjson.com/products/search?q=' + query);
+    return await response.json();
+}
+
