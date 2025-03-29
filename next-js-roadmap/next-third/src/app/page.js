@@ -22,6 +22,7 @@ export default async function Home() {
                             width={200}
                             height={200}
                             className="product-image"
+                            priority={true}
                         />
                         <div className="product-info">
                             <h1>{product.title}</h1>
