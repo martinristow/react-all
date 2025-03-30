@@ -7,8 +7,11 @@ import {useAuth} from "@/app/context/authContext";
 
 export default function UserRegister() {
 
-    const {user} = useAuth()
-    console.log(user)
+    const {user, loggedIn} = useAuth()
+
+    if(loggedIn){
+        window.location.href = "/";
+    }
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
