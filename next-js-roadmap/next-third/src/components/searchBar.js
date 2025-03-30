@@ -1,11 +1,26 @@
 'use client'
 
 import {useState} from "react";
+import {useAuth} from "@/app/context/authContext";
+import {signOut} from "firebase/auth";
+import {auth} from "@/app/firebase";
 
 const SearchBar = () => {
 
+    const {loggedIn} = useAuth();
+
     const [searchTerm, setSearchTerm] = useState("");
     const [searchResult, setSearchResult] = useState([]);
+
+    const logoutUser = () => {
+        signOut(auth).then(() => {
+            window.location.reload();
+            // Sign-out successful.
+        }).catch((error) => {
+            // An error happened.
+        });
+
+    }
 
     const search = async () => {
 
@@ -16,6 +31,10 @@ const SearchBar = () => {
 
     return (
         <div>
+
+            <div>{loggedIn ? <button onClick={logoutUser}>Logout</button> : <a href="/user/login">Login</a>}</div>
+
+
             <form>
                 <input type="text" placeholder="Enter a name of product"
                        onInput={e => setSearchTerm(e.target.value)}/>
