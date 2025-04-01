@@ -1,12 +1,4 @@
 import React from 'react'
-import {Weather} from "./Components/Conditional Rendering/Weather.jsx";
-import UserStatus from "./Components/Conditional Rendering/UserStatus.jsx";
-import Greeting from "./Components/Components-Expressions-JSX-Lists/Greeting.jsx";
-import Greeting1 from "./Components/Conditional Rendering/Greeting1.jsx";
-import StyleComponent from "./Components/Basics of Styling/StyleComponent.jsx";
-import StyledCard from "./Components/Basics of Styling/StyledCard.jsx";
-import ProfileCard from "./Components/Basics of Styling/ProfileCard.jsx";
-import IconComponent from "./Components/Basics of Styling/IconComponent.jsx";
 
 const App = () => {
     return (
@@ -46,11 +38,14 @@ const App = () => {
                 {/*<Greeting1 timeOfDay="morning"/>*/}
             </div>
             <div>
-                <StyleComponent />
-                <StyledCard/>
-                <ProfileCard/>
-                <IconComponent/>
+                {/*<StyleComponent />*/}
+                {/*<StyledCard/>*/}
+                {/*<ProfileCard/>*/}
+                {/*<IconComponent/>*/}
             </div>
+            <Button/>
+            <Copy/>
+            <Move/>
         </section>
     )
 }
@@ -65,26 +60,48 @@ export default App;
 // };
 
 
-const Cart = () => {
-    const items = ["Power Bank", "New SSD", "Hoodie", "Wireless Earbuds"];
+// const Cart = () => {
+//     const items = ["Power Bank", "New SSD", "Hoodie", "Wireless Earbuds"];
+//
+//     return (
+//         <div>
+//             <h1>Cart </h1>
+//             {
+//                 items.length > 0 && <h2>You have {items.length} items in your Cart</h2>
+//             }
+//
+//             <ul>
+//                 <h4>Products</h4>
+//
+//                 {
+//                     items.map((item, index) => (
+//                         <li key={index}>{item}</li>
+//                     ))
+//                 }
+//             </ul>
+//
+//         </div>
+//     )
+// }
 
-    return (
-        <div>
-            <h1>Cart </h1>
-            {
-                items.length > 0 && <h2>You have {items.length} items in your Cart</h2>
-            }
+const Button = () => {
+    const handleClick = () => console.log(Math.round(Math.random() * 10));
+    return <button onClick={handleClick}>Click</button>
+}
 
-            <ul>
-                <h4>Products</h4>
+const Copy = () => {
+    const copyHandler = () => {
+        console.log("Stop stealing my content")
+    }
+    return <p onCopy={copyHandler}>Lorem, ipsum dolor sit amet consectetur radicalising elit.</p>
+}
 
-                {
-                    items.map((item, index) => (
-                        <li key={index}>{item}</li>
-                    ))
-                }
-            </ul>
+const Move = () => {
 
-        </div>
-    )
+    const moveHandler = () => {
+        alert("Mouse move event fired")
+        console.log("Mouse move event fired")
+
+    }
+    return <p onMouseMove={moveHandler}>Lorem, ipsum dolor sit amet consectetur radicalising elit.</p>
 }
