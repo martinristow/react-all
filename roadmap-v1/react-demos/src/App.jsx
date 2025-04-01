@@ -8,6 +8,9 @@ import JSXRules from "./Components/JSXRules.jsx";
 import ExpressionsInJSX from "./Components/ExpressionsInJSX.jsx";
 import Greeting from "./Components/Greeting.jsx";
 import ProductInfo from "./Components/ProductInfo.jsx";
+import Lists from "./Components/Lists.jsx";
+import UserList from "./Components/UserList.jsx";
+import ProductList from "./Components/ProductList.jsx";
 
 const App = () => {
     return (
@@ -22,7 +25,10 @@ const App = () => {
             {/*<JSXRules/>*/}
             {/*<ExpressionsInJSX/>*/}
             {/*<Greeting/>*/}
-            <ProductInfo/>
+            {/*<ProductInfo/>*/}
+            {/*<Lists/>*/}
+            <UserList/>
+            <ProductList/>
             {/*<Footer/>*/}
         </section>
     )
