@@ -3,6 +3,7 @@ import Greet from "./Components/Greet.jsx";
 import Header from "./Components/Header.jsx";
 import Footer from "./Components/Footer.jsx";
 import MainContent from "./Components/MainContent.jsx";
+import WelcomeMessage from "./Components/WelcomeMessage.jsx";
 
 const App = () => {
     return (
@@ -13,6 +14,7 @@ const App = () => {
             {/*<Greet/>*/}
             <Header/>
             <MainContent/>
+            <WelcomeMessage/>
             <Footer/>
         </section>
     )
