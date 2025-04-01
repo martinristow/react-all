@@ -3,6 +3,10 @@ import {Weather} from "./Components/Conditional Rendering/Weather.jsx";
 import UserStatus from "./Components/Conditional Rendering/UserStatus.jsx";
 import Greeting from "./Components/Components-Expressions-JSX-Lists/Greeting.jsx";
 import Greeting1 from "./Components/Conditional Rendering/Greeting1.jsx";
+import StyleComponent from "./Components/Basics of Styling/StyleComponent.jsx";
+import StyledCard from "./Components/Basics of Styling/StyledCard.jsx";
+import ProfileCard from "./Components/Basics of Styling/ProfileCard.jsx";
+import IconComponent from "./Components/Basics of Styling/IconComponent.jsx";
 
 const App = () => {
     return (
@@ -37,9 +41,15 @@ const App = () => {
                 {/*<Cart/>*/}
             </div>
             <div>
-                <Weather temperature="17"/>
-                <UserStatus isAdmin={true} loggedIn={false}/>
-                <Greeting1 timeOfDay="morning"/>
+                {/*<Weather temperature="17"/>*/}
+                {/*<UserStatus isAdmin={true} loggedIn={false}/>*/}
+                {/*<Greeting1 timeOfDay="morning"/>*/}
+            </div>
+            <div>
+                <StyleComponent />
+                <StyledCard/>
+                <ProfileCard/>
+                <IconComponent/>
             </div>
         </section>
     )
