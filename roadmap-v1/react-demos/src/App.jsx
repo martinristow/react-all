@@ -4,6 +4,7 @@ import Header from "./Components/Header.jsx";
 import Footer from "./Components/Footer.jsx";
 import MainContent from "./Components/MainContent.jsx";
 import WelcomeMessage from "./Components/WelcomeMessage.jsx";
+import JSXRules from "./Components/JSXRules.jsx";
 
 const App = () => {
     return (
@@ -15,6 +16,7 @@ const App = () => {
             <Header/>
             <MainContent/>
             <WelcomeMessage/>
+            <JSXRules/>
             <Footer/>
         </section>
     )
