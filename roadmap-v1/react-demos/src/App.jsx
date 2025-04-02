@@ -1,9 +1,14 @@
-import React from 'react'
+import React, {useState} from 'react'
 import State from "./Components/State/State.jsx";
 import ObjectState from "./Components/State/ObjectState.jsx";
 import ObjectsInListState from "./Components/State/ObjectsInListState.jsx";
+import ComponentOne from "./Components/Lifting State Up/ComponentOne.jsx";
+import ComponentTwo from "./Components/Lifting State Up/ComponentTwo.jsx";
 
 const App = () => {
+
+    const [count, setCount] = useState(0);
+
     return (
         <section>
             <div>
@@ -54,7 +59,11 @@ const App = () => {
             <div>
                 {/*<State/>*/}
                 {/*<ObjectState/>*/}
-                <ObjectsInListState/>
+                {/*<ObjectsInListState/>*/}
+            </div>
+            <div>
+                <ComponentOne count={count} onClick={ () => setCount(count + 1) } />
+                <ComponentTwo count={count} onClick={() => setCount(count + 1)} />
             </div>
         </section>
     )
