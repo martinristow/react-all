@@ -1,12 +1,10 @@
 import React from 'react'
-import FetchDataEffect from "./Components/Hooks/useEffect/Exercises/FetchDataEffect.jsx";
-import BasicEffect from "./Components/Hooks/useEffect/Exercises/BasicEffect.jsx";
-import CounterEffect from "./Components/Hooks/useEffect/Exercises/CounterEffect.jsx";
+import ComponentA from "./Components/Hooks/prop drilling/ComponentA.jsx";
 
 const App = () => {
 
     // const [count, setCount] = useState(0);
-
+        const name = "Martin";
     return (
         <section>
             <div>
@@ -80,9 +78,12 @@ const App = () => {
             <div>
                 {/*<UseEffectComponent/>*/}
                 {/*    <UseEffectFetchingData/>*/}
-                    <BasicEffect/>
-                    <CounterEffect/>
-                <FetchDataEffect/>
+                {/*<BasicEffect/>*/}
+                {/*<CounterEffect/>*/}
+                {/*<FetchDataEffect/>*/}
+            </div>
+            <div>
+                <ComponentA name={name}/>
             </div>
         </section>
     )
