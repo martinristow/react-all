@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
-import ExampleOne from "./Components/Lazy Initialization/ExampleOne.jsx";
-import ExampleTwo from "./Components/Lazy Initialization/ExampleTwo.jsx";
-import ExampleThree from "./Components/Lazy Initialization/ExampleThree.jsx";
+import Counter from "./Components/Lazy Initialization/Exercises/Counter.jsx";
+import TodoList from "./Components/Lazy Initialization/Exercises/TodoList.jsx";
+import Profile from "./Components/Lazy Initialization/Exercises/Profile.jsx";
+import ShoppingList from "./Components/Lazy Initialization/Exercises/ShoppingList.jsx";
 
 const App = () => {
 
@@ -66,7 +67,13 @@ const App = () => {
             <div>
                 {/*<ExampleOne/>*/}
                 {/*<ExampleTwo/>*/}
-                <ExampleThree/>
+                {/*<ExampleThree/>*/}
+            </div>
+            <div>
+                <Counter/>
+                <TodoList/>
+                <Profile/>
+                <ShoppingList/>
             </div>
         </section>
     )
