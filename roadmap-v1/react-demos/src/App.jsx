@@ -1,9 +1,7 @@
 import React, {useState} from 'react'
-import State from "./Components/State/State.jsx";
-import ObjectState from "./Components/State/ObjectState.jsx";
-import ObjectsInListState from "./Components/State/ObjectsInListState.jsx";
-import ComponentOne from "./Components/Lifting State Up/ComponentOne.jsx";
-import ComponentTwo from "./Components/Lifting State Up/ComponentTwo.jsx";
+import ExampleOne from "./Components/Lazy Initialization/ExampleOne.jsx";
+import ExampleTwo from "./Components/Lazy Initialization/ExampleTwo.jsx";
+import ExampleThree from "./Components/Lazy Initialization/ExampleThree.jsx";
 
 const App = () => {
 
@@ -62,8 +60,13 @@ const App = () => {
                 {/*<ObjectsInListState/>*/}
             </div>
             <div>
-                <ComponentOne count={count} onClick={ () => setCount(count + 1) } />
-                <ComponentTwo count={count} onClick={() => setCount(count + 1)} />
+                {/*<ComponentOne count={count} onClick={ () => setCount(count + 1) } />*/}
+                {/*<ComponentTwo count={count} onClick={() => setCount(count + 1)} />*/}
+            </div>
+            <div>
+                {/*<ExampleOne/>*/}
+                {/*<ExampleTwo/>*/}
+                <ExampleThree/>
             </div>
         </section>
     )
