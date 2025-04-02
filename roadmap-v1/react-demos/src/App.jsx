@@ -1,4 +1,5 @@
 import React from 'react'
+import State from "./Components/State/State.jsx";
 
 const App = () => {
     return (
@@ -43,9 +44,14 @@ const App = () => {
                 {/*<ProfileCard/>*/}
                 {/*<IconComponent/>*/}
             </div>
-            <Button/>
-            <Copy/>
-            <Move/>
+            <div>
+                {/*<Button/>*/}
+                {/*<Copy/>*/}
+                {/*<Move/>*/}
+            </div>
+            <div>
+                <State/>
+            </div>
         </section>
     )
 }
@@ -84,24 +90,24 @@ export default App;
 //     )
 // }
 
-const Button = () => {
-    const handleClick = () => console.log(Math.round(Math.random() * 10));
-    return <button onClick={handleClick}>Click</button>
-}
-
-const Copy = () => {
-    const copyHandler = () => {
-        console.log("Stop stealing my content")
-    }
-    return <p onCopy={copyHandler}>Lorem, ipsum dolor sit amet consectetur radicalising elit.</p>
-}
-
-const Move = () => {
-
-    const moveHandler = () => {
-        alert("Mouse move event fired")
-        console.log("Mouse move event fired")
-
-    }
-    return <p onMouseMove={moveHandler}>Lorem, ipsum dolor sit amet consectetur radicalising elit.</p>
-}
+// const Button = () => {
+//     const handleClick = () => console.log(Math.round(Math.random() * 10));
+//     return <button onClick={handleClick}>Click</button>
+// }
+//
+// const Copy = () => {
+//     const copyHandler = () => {
+//         console.log("Stop stealing my content")
+//     }
+//     return <p onCopy={copyHandler}>Lorem, ipsum dolor sit amet consectetur radicalising elit.</p>
+// }
+//
+// const Move = () => {
+//
+//     const moveHandler = () => {
+//         alert("Mouse move event fired")
+//         console.log("Mouse move event fired")
+//
+//     }
+//     return <p onMouseMove={moveHandler}>Lorem, ipsum dolor sit amet consectetur radicalising elit.</p>
+// }
