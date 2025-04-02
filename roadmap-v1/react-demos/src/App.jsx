@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
-import CopyInput from "./Components/Portals/CopyInput.jsx";
+import UseEffectComponent from "./Components/Hooks/useEffect/useEffectComponent.jsx";
 
 const App = () => {
 
-    const [count, setCount] = useState(0);
+    // const [count, setCount] = useState(0);
 
     return (
         <section>
@@ -73,7 +73,10 @@ const App = () => {
                 {/*<ShoppingList/>*/}
             </div>
             <div>
-                <CopyInput/>
+                {/*<CopyInput/>*/}
+            </div>
+            <div>
+                <UseEffectComponent/>
             </div>
         </section>
     )
