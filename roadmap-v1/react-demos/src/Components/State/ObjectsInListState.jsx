@@ -20,8 +20,8 @@ const ObjectsInListState = () => {
     return (
         <div>
             {
-                movies.map(movie => (
-                    <li key={movie.id}>{movie.title}</li>
+                movies.map((movie, index) => (
+                    <li key={index}>{movie.title}</li>
                 ))
             }
 
