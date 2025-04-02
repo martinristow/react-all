@@ -1,6 +1,7 @@
-import React, {useState} from 'react'
-import UseEffectComponent from "./Components/Hooks/useEffect/useEffectComponent.jsx";
-import UseEffectFetchingData from "./Components/Hooks/useEffect/useEffectFetchingData.jsx";
+import React from 'react'
+import FetchDataEffect from "./Components/Hooks/useEffect/Exercises/FetchDataEffect.jsx";
+import BasicEffect from "./Components/Hooks/useEffect/Exercises/BasicEffect.jsx";
+import CounterEffect from "./Components/Hooks/useEffect/Exercises/CounterEffect.jsx";
 
 const App = () => {
 
@@ -78,7 +79,10 @@ const App = () => {
             </div>
             <div>
                 {/*<UseEffectComponent/>*/}
-                    <UseEffectFetchingData/>
+                {/*    <UseEffectFetchingData/>*/}
+                    <BasicEffect/>
+                    <CounterEffect/>
+                <FetchDataEffect/>
             </div>
         </section>
     )
