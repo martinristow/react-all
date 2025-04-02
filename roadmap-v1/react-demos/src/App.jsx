@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import UseEffectComponent from "./Components/Hooks/useEffect/useEffectComponent.jsx";
+import UseEffectFetchingData from "./Components/Hooks/useEffect/useEffectFetchingData.jsx";
 
 const App = () => {
 
@@ -76,7 +77,8 @@ const App = () => {
                 {/*<CopyInput/>*/}
             </div>
             <div>
-                <UseEffectComponent/>
+                {/*<UseEffectComponent/>*/}
+                    <UseEffectFetchingData/>
             </div>
         </section>
     )
