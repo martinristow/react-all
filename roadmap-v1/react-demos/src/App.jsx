@@ -1,5 +1,7 @@
 import React from 'react'
 import State from "./Components/State/State.jsx";
+import ObjectState from "./Components/State/ObjectState.jsx";
+import ObjectsInListState from "./Components/State/ObjectsInListState.jsx";
 
 const App = () => {
     return (
@@ -50,7 +52,9 @@ const App = () => {
                 {/*<Move/>*/}
             </div>
             <div>
-                <State/>
+                {/*<State/>*/}
+                {/*<ObjectState/>*/}
+                <ObjectsInListState/>
             </div>
         </section>
     )
