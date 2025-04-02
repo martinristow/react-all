@@ -7,9 +7,12 @@ const UseEffectComponent = () => {
 
 
     useEffect(() => {
+        if(value > 0){
         console.log("Called useEffect")
         document.title = `Increment ${value}`
-    }, [value, something]);
+        }
+    }, [value]);
+
 
     return (
         <div>
