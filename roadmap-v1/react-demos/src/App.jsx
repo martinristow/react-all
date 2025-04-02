@@ -1,8 +1,5 @@
 import React, {useState} from 'react'
-import Counter from "./Components/Lazy Initialization/Exercises/Counter.jsx";
-import TodoList from "./Components/Lazy Initialization/Exercises/TodoList.jsx";
-import Profile from "./Components/Lazy Initialization/Exercises/Profile.jsx";
-import ShoppingList from "./Components/Lazy Initialization/Exercises/ShoppingList.jsx";
+import CopyInput from "./Components/Portals/CopyInput.jsx";
 
 const App = () => {
 
@@ -70,10 +67,13 @@ const App = () => {
                 {/*<ExampleThree/>*/}
             </div>
             <div>
-                <Counter/>
-                <TodoList/>
-                <Profile/>
-                <ShoppingList/>
+                {/*<Counter/>*/}
+                {/*<TodoList/>*/}
+                {/*<Profile/>*/}
+                {/*<ShoppingList/>*/}
+            </div>
+            <div>
+                <CopyInput/>
             </div>
         </section>
     )
