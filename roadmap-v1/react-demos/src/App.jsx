@@ -2,11 +2,13 @@ import React, {createContext} from 'react'
 import ComponentA from "./Components/Hooks/ContextAPI/ComponentA.jsx";
 
 export const Data = createContext()
+export const Data1 = createContext()
 
 const App = () => {
 
     // const [count, setCount] = useState(0);
     const name = "Martin";
+    const age = 23;
     return (
         <section>
             <div>
@@ -89,7 +91,9 @@ const App = () => {
             </div>
             <div>
                 <Data.Provider value={name}>
-                    <ComponentA/>
+                    <Data1.Provider value={age}>
+                        <ComponentA/>
+                    </Data1.Provider>
                 </Data.Provider>
             </div>
         </section>

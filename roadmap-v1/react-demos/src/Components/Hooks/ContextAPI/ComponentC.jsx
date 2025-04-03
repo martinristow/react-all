@@ -1,5 +1,5 @@
 import React from 'react'
-import {Data} from "../../../App.jsx";
+import {Data, Data1} from "../../../App.jsx";
 
 const ComponentC = () => {
 
@@ -8,8 +8,17 @@ const ComponentC = () => {
         <div>
             <Data.Consumer>
                 {
-                    (asd) => {
-                        return <h1>{asd}</h1>
+                    (name) => {
+                        // return <h1>{name}, {age}</h1>
+                        return (
+                            <Data1.Consumer>
+                                {
+                                    (age) => {
+                                        return <h2>My name is {name} and I'm {age} years old.</h2>
+                                    }
+                                }
+                            </Data1.Consumer>
+                        )
                     }
                 }
             </Data.Consumer>
