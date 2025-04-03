@@ -1,10 +1,12 @@
-import React from 'react'
-import ComponentA from "./Components/Hooks/prop drilling/ComponentA.jsx";
+import React, {createContext} from 'react'
+import ComponentA from "./Components/Hooks/ContextAPI/ComponentA.jsx";
+
+export const Data = createContext()
 
 const App = () => {
 
     // const [count, setCount] = useState(0);
-        const name = "Martin";
+    const name = "Martin";
     return (
         <section>
             <div>
@@ -83,7 +85,12 @@ const App = () => {
                 {/*<FetchDataEffect/>*/}
             </div>
             <div>
-                <ComponentA name={name}/>
+                {/*<ComponentA name={name}/>*/}
+            </div>
+            <div>
+                <Data.Provider value={name}>
+                    <ComponentA/>
+                </Data.Provider>
             </div>
         </section>
     )
