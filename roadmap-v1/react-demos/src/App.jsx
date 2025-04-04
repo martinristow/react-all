@@ -1,5 +1,8 @@
 import React, {createContext} from 'react'
 import ComponentA from "./Components/Hooks/ContextAPI/ComponentA.jsx";
+import {UserProvider} from "./Components/Hooks/ContextAPI/Exercises/UserContext.jsx";
+import {UserProfile} from "./Components/Hooks/ContextAPI/Exercises/UserProfile.jsx";
+import {UpdateUser} from "./Components/Hooks/ContextAPI/Exercises/UpdateUser.jsx";
 
 export const Data = createContext()
 export const Data1 = createContext()
@@ -90,12 +93,19 @@ const App = () => {
                 {/*<ComponentA name={name}/>*/}
             </div>
             <div>
-                <Data.Provider value={name}>
-                    <Data1.Provider value={age}>
-                        <ComponentA/>
-                    </Data1.Provider>
-                </Data.Provider>
+                {/*<Data.Provider value={name}>*/}
+                {/*    <Data1.Provider value={age}>*/}
+                {/*        <ComponentA/>*/}
+                {/*    </Data1.Provider>*/}
+                {/*</Data.Provider>*/}
             </div>
+            <div>
+                <UserProvider>
+                    <UserProfile/>
+                    <UpdateUser/>
+                </UserProvider>
+            </div>
+
         </section>
     )
 }
