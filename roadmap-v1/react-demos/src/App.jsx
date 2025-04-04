@@ -1,5 +1,6 @@
 import React, {createContext} from 'react'
-import User from "./Components/Hooks/useReducer/Exercise-v1/User.jsx";
+import UseRefExample from "./Components/Hooks/useRef/Example/useRefExample.jsx";
+import FocusInput from "./Components/Hooks/useRef/Exercise/FocusInput.jsx";
 
 export const Data = createContext()
 export const Data1 = createContext()
@@ -115,7 +116,11 @@ const App = () => {
                 {/*<Counter/>*/}
             </div>
             <div>
-                <User/>
+                {/*<User/>*/}
+            </div>
+            <div>
+                <UseRefExample/>
+                <FocusInput/>
             </div>
         </section>
     )
