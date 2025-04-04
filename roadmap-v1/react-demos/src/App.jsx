@@ -3,6 +3,9 @@ import ComponentA from "./Components/Hooks/ContextAPI/ComponentA.jsx";
 import {UserProvider} from "./Components/Hooks/ContextAPI/Exercises/UserContext.jsx";
 import {UserProfile} from "./Components/Hooks/ContextAPI/Exercises/UserProfile.jsx";
 import {UpdateUser} from "./Components/Hooks/ContextAPI/Exercises/UpdateUser.jsx";
+import {ProductProvider} from "./Components/Hooks/ContextAPI/Exercises-1/ProductContext.jsx";
+import ProductProfile from "./Components/Hooks/ContextAPI/Exercises-1/ProductProfile.jsx";
+import {UpdateProduct} from "./Components/Hooks/ContextAPI/Exercises-1/UpdateProduct.jsx";
 
 export const Data = createContext()
 export const Data1 = createContext()
@@ -100,10 +103,16 @@ const App = () => {
                 {/*</Data.Provider>*/}
             </div>
             <div>
-                <UserProvider>
-                    <UserProfile/>
-                    <UpdateUser/>
-                </UserProvider>
+                {/*<UserProvider>*/}
+                {/*    <UserProfile/>*/}
+                {/*    <UpdateUser/>*/}
+                {/*</UserProvider>*/}
+            </div>
+            <div>
+                        <ProductProvider>
+                                <ProductProfile/>
+                                <UpdateProduct/>
+                        </ProductProvider>
             </div>
 
         </section>
