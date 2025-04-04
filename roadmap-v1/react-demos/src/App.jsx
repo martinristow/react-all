@@ -1,5 +1,6 @@
 import React, {createContext} from 'react'
 import ExampleHook from "./Components/Hooks/Custom Hooks/ExampleHook.jsx";
+import UniqueId from "./Components/Hooks/useId/Components/UniqueID.jsx";
 
 export const Data = createContext()
 export const Data1 = createContext()
@@ -122,8 +123,12 @@ const App = () => {
                 {/*<FocusInput/>*/}
             </div>
             <div>
-                <ExampleHook />
+                {/*<ExampleHook />*/}
             </div>
+                <div>
+        <UniqueId/>
+        <UniqueId/>
+                </div>
         </section>
     )
 }
