@@ -1,11 +1,5 @@
 import React, {createContext} from 'react'
-import ComponentA from "./Components/Hooks/ContextAPI/ComponentA.jsx";
-import {UserProvider} from "./Components/Hooks/ContextAPI/Exercises/UserContext.jsx";
-import {UserProfile} from "./Components/Hooks/ContextAPI/Exercises/UserProfile.jsx";
-import {UpdateUser} from "./Components/Hooks/ContextAPI/Exercises/UpdateUser.jsx";
-import {ProductProvider} from "./Components/Hooks/ContextAPI/Exercises-1/ProductContext.jsx";
-import ProductProfile from "./Components/Hooks/ContextAPI/Exercises-1/ProductProfile.jsx";
-import {UpdateProduct} from "./Components/Hooks/ContextAPI/Exercises-1/UpdateProduct.jsx";
+import {CountReducer} from "./Components/Hooks/useReducer/Examples/Example.jsx";
 
 export const Data = createContext()
 export const Data1 = createContext()
@@ -109,12 +103,14 @@ const App = () => {
                 {/*</UserProvider>*/}
             </div>
             <div>
-                        <ProductProvider>
-                                <ProductProfile/>
-                                <UpdateProduct/>
-                        </ProductProvider>
+                {/*<ProductProvider>*/}
+                {/*        <ProductProfile/>*/}
+                {/*        <UpdateProduct/>*/}
+                {/*</ProductProvider>*/}
             </div>
-
+            <div>
+                    <CountReducer/>
+            </div>
         </section>
     )
 }
