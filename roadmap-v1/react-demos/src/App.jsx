@@ -1,6 +1,5 @@
 import React, {createContext} from 'react'
-import UseRefExample from "./Components/Hooks/useRef/Example/useRefExample.jsx";
-import FocusInput from "./Components/Hooks/useRef/Exercise/FocusInput.jsx";
+import ExampleHook from "./Components/Hooks/Custom Hooks/ExampleHook.jsx";
 
 export const Data = createContext()
 export const Data1 = createContext()
@@ -119,8 +118,11 @@ const App = () => {
                 {/*<User/>*/}
             </div>
             <div>
-                <UseRefExample/>
-                <FocusInput/>
+                {/*<UseRefExample/>*/}
+                {/*<FocusInput/>*/}
+            </div>
+            <div>
+                <ExampleHook />
             </div>
         </section>
     )
