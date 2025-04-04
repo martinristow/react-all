@@ -1,5 +1,5 @@
 import React, {createContext} from 'react'
-import {CountReducer} from "./Components/Hooks/useReducer/Examples/Example.jsx";
+import Counter from "./Components/Hooks/useReducer/Exercise/Counter.jsx";
 
 export const Data = createContext()
 export const Data1 = createContext()
@@ -109,7 +109,10 @@ const App = () => {
                 {/*</ProductProvider>*/}
             </div>
             <div>
-                    <CountReducer/>
+                {/*<CountReducer/>*/}
+            </div>
+            <div>
+                <Counter/>
             </div>
         </section>
     )
