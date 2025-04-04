@@ -1,5 +1,5 @@
 import React, {createContext} from 'react'
-import Counter from "./Components/Hooks/useReducer/Exercise/Counter.jsx";
+import User from "./Components/Hooks/useReducer/Exercise-v1/User.jsx";
 
 export const Data = createContext()
 export const Data1 = createContext()
@@ -112,7 +112,10 @@ const App = () => {
                 {/*<CountReducer/>*/}
             </div>
             <div>
-                <Counter/>
+                {/*<Counter/>*/}
+            </div>
+            <div>
+                <User/>
             </div>
         </section>
     )
