@@ -11,9 +11,11 @@
 // import TodoList from "./Components/TodoList.tsx";
 // import Form from "./Components/Form.tsx";
 
-import FocusInput from "./Components/FocusInput.tsx";
-import ContactForm from "./Components/ContactForm.tsx";
-import EventHandling from "./Components/EventHandling.tsx";
+// import FocusInput from "./Components/FocusInput.tsx";
+// import ContactForm from "./Components/ContactForm.tsx";
+// import EventHandling from "./Components/EventHandling.tsx";
+// import CounterV1 from "./Components/CounterV1.tsx";
+import CounterV2 from "./Components/CounterV2.tsx";
 
 const App = () => {
     // const user: Info = {
@@ -42,9 +44,13 @@ const App = () => {
             {/*<TodoList/>*/}
             {/*<Form/>*/}
 
-            <FocusInput/>
-            <ContactForm/>
-            <EventHandling/>
+            {/*<FocusInput/>*/}
+            {/*<ContactForm/>*/}
+            {/*<EventHandling/>*/}
+
+            {/*<CounterV1/>*/}
+
+            <CounterV2/>
         </div>
     )
 }
