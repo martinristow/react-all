@@ -6,9 +6,14 @@
 // import AdminInfo from "./Components/AdminInfo.tsx";
 // import {Info, AdminInfoList} from "./types.ts";
 
-import Counter from "./Components/Counter.tsx";
-import UserProfile from "./Components/UserProfile.tsx";
-import TodoList from "./Components/TodoList.tsx";
+// import Counter from "./Components/Counter.tsx";
+// import UserProfile from "./Components/UserProfile.tsx";
+// import TodoList from "./Components/TodoList.tsx";
+// import Form from "./Components/Form.tsx";
+
+import FocusInput from "./Components/FocusInput.tsx";
+import ContactForm from "./Components/ContactForm.tsx";
+import EventHandling from "./Components/EventHandling.tsx";
 
 const App = () => {
     // const user: Info = {
@@ -32,9 +37,14 @@ const App = () => {
             {/*<UserInfo user={user}/>*/}
             {/*<AdminInfo admin={admin}/>*/}
 
-            <Counter/>
-            <UserProfile/>
-            <TodoList/>
+            {/*<Counter/>*/}
+            {/*<UserProfile/>*/}
+            {/*<TodoList/>*/}
+            {/*<Form/>*/}
+
+            <FocusInput/>
+            <ContactForm/>
+            <EventHandling/>
         </div>
     )
 }
