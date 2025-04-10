@@ -20,7 +20,10 @@
 // import CounterV3 from "./Components/CounterV3.tsx";
 
 // import MyComponent from "./UseEffect/MyComponent.tsx";
-import UserList from "./UseEffect/UserList.tsx";
+// import UserList from "./UseEffect/UserList.tsx";
+
+// import Form from "./ReactHookForms/Form.tsx";
+import AdvancedForm from "./ReactHookForms/AdvancedForm.tsx";
 
 const App = () => {
     // const user: Info = {
@@ -61,7 +64,9 @@ const App = () => {
 
             {/*<MyComponent/>*/}
 
-            <UserList />
+            {/*<UserList />*/}
+            {/*<Form/>*/}
+            <AdvancedForm/>
         </div>
     )
 }
