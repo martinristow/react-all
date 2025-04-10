@@ -1,6 +1,10 @@
+import FetchTodo from "./Components/FetchTodo.tsx";
+
 const App = () => {
     return (
-        <div>App</div>
+        <div>
+            <FetchTodo/>
+        </div>
     )
 }
 export default App
