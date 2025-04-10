@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ThemeContext } from "./Theme.tsx";
+import { ThemeContext } from "./Theme.jsx";
 
 const Card = () => {
     const { theme, toggleTheme } = useContext(ThemeContext);

@@ -2,7 +2,7 @@
 
 // import NewWayToFetchTodo from "./Components/use/NewWayToFetchTodo.tsx";
 // import {Suspense} from "react";
-import Theme from './Components/UseContext/Theme.tsx'
+import Theme from './Components/UseContext/Theme.jsx'
 
 const App = () => {
     return (
