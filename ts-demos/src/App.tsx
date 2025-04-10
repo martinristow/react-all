@@ -15,7 +15,12 @@
 // import ContactForm from "./Components/ContactForm.tsx";
 // import EventHandling from "./Components/EventHandling.tsx";
 // import CounterV1 from "./Components/CounterV1.tsx";
-import CounterV2 from "./Components/CounterV2.tsx";
+// import CounterV2 from "./Components/CounterV2.tsx";
+//
+// import CounterV3 from "./Components/CounterV3.tsx";
+
+// import MyComponent from "./UseEffect/MyComponent.tsx";
+import UserList from "./UseEffect/UserList.tsx";
 
 const App = () => {
     // const user: Info = {
@@ -50,7 +55,13 @@ const App = () => {
 
             {/*<CounterV1/>*/}
 
-            <CounterV2/>
+            {/*<CounterV2/>*/}
+
+            {/*<CounterV3/>*/}
+
+            {/*<MyComponent/>*/}
+
+            <UserList />
         </div>
     )
 }
