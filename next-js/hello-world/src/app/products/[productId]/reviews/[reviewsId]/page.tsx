@@ -1,4 +1,5 @@
 import React from 'react'
+import {notFound} from "next/navigation";
 
 const ReviewDetail = async ({params,}: {
     params: Promise<{
@@ -8,7 +9,12 @@ const ReviewDetail = async ({params,}: {
 }) => {
 
     const {productId, reviewsId} = await params;
-    console.log(reviewsId, productId);
+
+
+    if(parseInt(reviewsId) > 1000){
+        notFound();
+    }
+
     return (
         <div>
             <h1>Review {reviewsId} for product {productId}</h1>
