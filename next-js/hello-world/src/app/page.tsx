@@ -10,7 +10,7 @@ const navLinks = [
     {name: "Products", href: "/products"}
 ]
 
-export const Home = () => {
+const Home = () => {
 
     const pathname = usePathname();
 
@@ -24,7 +24,7 @@ export const Home = () => {
                         <Link
                             href={link.href}
                             key={index}
-                            className={isActive ? "font-bold mr-4" : "text0blue-500 mr-4"}
+                            className={isActive ? "font-bold mr-4" : "text-blue-500 mr-4"}
                         >
                             {link.name}
                         </Link>
