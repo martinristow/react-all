@@ -1,11 +1,3 @@
-import {Metadata} from "next";
-
-type Props = {
-    params: {
-        productId: string;
-    }
-}
-
 // export const generateMetadata =  async ({params}: Props): Promise<Metadata> => {
 //
 //     const title = await new Promise(resolve => {
@@ -20,10 +12,10 @@ type Props = {
 // }
 
 
-const ProductsID = async ({params}: Props) => {
-    const {productId} = await params
+export default async function ProductDetails({params}: { params: Promise<{ productId: string }> }) {
+    const {productId} = await params;
+
     return (
         <div>Details about product {productId}</div>
-    )
+    );
 }
-export default ProductsID
