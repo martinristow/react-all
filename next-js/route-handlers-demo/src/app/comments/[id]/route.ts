@@ -11,7 +11,7 @@ export async function GET(request: Request, {params}: { params: { id: string } }
 export async function PATCH(request: Request, {params}: { params: { id: string } }) {
 
     const body = await request.json();
-    const { text } = body;
+    const {text} = body;
 
     const index = comments.findIndex(comment => comment.id === parseInt(params.id));
 
