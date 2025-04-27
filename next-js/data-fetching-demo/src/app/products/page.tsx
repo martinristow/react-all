@@ -1,3 +1,5 @@
+import {cookies} from "next/headers"
+
 interface Product {
     id: number;
     title: string;
@@ -6,6 +8,14 @@ interface Product {
 };
 
 export default async function ProductPage() {
+
+    const detailResponse = await fetch("http://localhost:3001/products/1", {
+        cache: "no-cache",
+    })
+    const details = await detailResponse.json();
+
+    const cookieStore = await cookies();
+    const theme = cookieStore.get("theme");
 
     const response = await fetch("http://localhost:3001/products")
     const products = await response.json();
