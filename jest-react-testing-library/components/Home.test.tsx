@@ -1,7 +1,8 @@
 import '@testing-library/jest-dom'
-import { fireEvent, render, screen } from '@testing-library/react'
+import {fireEvent, render, screen} from '@testing-library/react'
+import Home from "./Home";
 
-function sum(a:number, b:number){
+function sum(a: number, b: number) {
     return a + b;
 }
 
@@ -17,13 +18,13 @@ test("object assigment:", () => {
 })
 
 
-test('There is a "stop in Christoph', ()=> {
+test('There is a "stop in Christoph', () => {
     expect("Christoph").toMatch(/stop/);
 })
 
 async function getResponse() {
     return new Promise((resolve) => {
-        setTimeout(()=> {
+        setTimeout(() => {
             resolve({value: "Hello World"});
         }, 100);
     });
@@ -38,7 +39,34 @@ describe("Combine Promise response value", () => {
 
     test("async getResponse should return not abcd", async () => {
         const response = await getResponse();
-        expect(response).toEqual({value: "abcd"});
+        expect(response).not.toEqual({value: "abcd"});
     });
 });
 
+
+describe("Testing Home Component", () => {
+
+    beforeEach(() => {
+        render(<Home/>)
+    });
+
+    it("renders a heading", () => {
+        const text = screen.getByText(/Home/i);
+        expect(text).toBeInTheDocument()
+    })
+
+    it("renders a heading inside h1", () => {
+        const text = screen.getByRole("heading", {level: 1});
+        expect(text).toBeInTheDocument()
+    })
+
+    it("test the description", () => {
+        const text = screen.getByTestId("desc");
+        expect(text.textContent).toMatch(/description/);
+    })
+
+    it("test the name", () => {
+        const text = screen.getByTestId("ide");
+        expect(text.textContent).toMatch(/name/);
+    })
+})
