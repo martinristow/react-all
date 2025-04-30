@@ -16,7 +16,7 @@ const NotesForm = () => {
     return (
         <div className="max-w-md mx-auto p-4 bg-gray-100 rounded-lg shadow-md">
             <h2 className="text-2xl font-bold mb-4 text-center">Notes App</h2>
-            <p className="mb-4 text-gray-700">Add new notes in the list</p>
+            <p data-testid="desc" className="mb-4 text-gray-700">Add new notes in the list</p>
 
             <div className="mb-4">
                 <div className="mb-3">
@@ -30,7 +30,8 @@ const NotesForm = () => {
                 </div>
                 <button
                     onClick={handleSubmit}
-                    className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+                    disabled={note === ""}
+                    className="w-full bg-blue-500 text-white py-2 px-4 rounded cursor-pointer"
                 >
                     Add Note
                 </button>
@@ -39,7 +40,7 @@ const NotesForm = () => {
             {notes.length > 0 && (
                 <div className="mt-4">
                     <h3 className="text-lg font-semibold mb-2">Your Notes:</h3>
-                    <ul className="list-disc pl-5">
+                    <ul className="list-disc pl-5" data-testid="noteslist">
                         {notes.map((item, index) => (
                             <li key={index} className="mb-1">{item}</li>
                         ))}
